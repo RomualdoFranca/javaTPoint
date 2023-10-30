@@ -12,7 +12,7 @@ public class TestArrayMethod {
 
         System.out.println();
         printArray(getIntArray());
-        
+
         System.out.println();
         printStringArray(getStringArray());
 
