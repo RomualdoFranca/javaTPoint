@@ -36,6 +36,9 @@ public class MultidimensionalArray {
         // o numero de linhas deve ser igual ao numero de coluna
         String[][] cadastro = {{"L1-C1", "L1-C2", "L1-C3"}, {"L2-C1", "L2-C2", "L2-C3"},{"L3-C1", "L3-C2", "L3-C3"}};
         printStringArray(cadastro);
+        int[][] arr2 = new int[3][3];
+
+        print2DArray(inicializerArray(arr2));
     }
     static void  print2DArray(int[][] arr) {
 
@@ -55,6 +58,17 @@ public class MultidimensionalArray {
             }
             System.out.println("");
         }
+    }
+
+    // metodo para inicializar uma array preenchedo automaticamento com o laco for
+    static int[][] inicializerArray(int[][] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] =  count++;
+            }
+        }
+        return arr;
     }
 
 }
