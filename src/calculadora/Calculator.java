@@ -28,11 +28,155 @@ public class Calculator {
     private JButton a3Button;
     private JButton button20;
 
+    double a, b, result;
+    String op;
+
     public Calculator() {
+
+
+
         ACButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textDisplay.setText("");
+            }
+        });
+
+        a0Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a0Button.getText());
+            }
+        });
+        a1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a1Button.getText());
+            }
+        });
+        a2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a2Button.getText());
+            }
+        });
+        a3Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a3Button.getText());
+            }
+        });
+        a4Button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a4Button1.getText());
+            }
+        });
+        a5Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a5Button.getText());
+            }
+        });
+        a6Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a6Button.getText());
+            }
+        });
+        a7Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a7Button.getText());
+            }
+        });
+        a8Button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a8Button1.getText());
+            }
+        });
+        a9Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a9Button.getText());
+            }
+        });
+        button16.addActionListener(new ActionListener() { // botao de + ou -
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (textDisplay.getText().contains("."))
+                {
+                    double pm = Double.parseDouble(textDisplay.getText());
+                    pm = -1 * pm;
+                    textDisplay.setText(String.valueOf(pm));
+                } else
+                {
+                    long PM = Long.parseLong(textDisplay.getText());
+                    PM = -1 * PM;
+                    textDisplay.setText(String.valueOf(PM));
+
+                }
+            }
+        });
+        button20.addActionListener(new ActionListener() { // botao de virgula
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!textDisplay.getText().contains("."))
+                    textDisplay.setText(textDisplay.getText() + button20.getText());
+            }
+        });
+        a4Button.addActionListener(new ActionListener() { // botao de soma
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(textDisplay.getText());
+                op = "+";
+                textDisplay.setText("");
+            }
+        });
+        a8Button.addActionListener(new ActionListener() { // botao de subtracao
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(textDisplay.getText());
+                op = "-";
+                textDisplay.setText("");
+            }
+        });
+        xButton.addActionListener(new ActionListener() { // botao de multiplicacao
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(textDisplay.getText());
+                op = "*";
+                textDisplay.setText("");
+            }
+        });
+        button11.addActionListener(new ActionListener() { // botao de divisao
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                a = Double.parseDouble(textDisplay.getText());
+                op = "/";
+                textDisplay.setText("");
+            }
+        });
+        button6.addActionListener(new ActionListener() { // botao de apagar
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String backspace = null;
+
+                if (textDisplay.getText().length() > 0)
+                {
+                    StringBuilder strB = new StringBuilder(textDisplay.getText());
+                    strB.deleteCharAt(textDisplay.getText().length() - 1);
+                    backspace = String.valueOf(strB);
+                    textDisplay.setText(backspace);
+                }
+            }
+        });
+        a00Button.addActionListener(new ActionListener() { // botao 00
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textDisplay.setText(textDisplay.getText() + a00Button.getText());
             }
         });
     }
