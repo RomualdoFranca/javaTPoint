@@ -3,6 +3,7 @@ package calculadora;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class Calculator {
     private JPanel Calculator;
@@ -177,6 +178,30 @@ public class Calculator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textDisplay.setText(textDisplay.getText() + a00Button.getText());
+            }
+        });
+        button5.addActionListener(new ActionListener() {// igualdade
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                b = Double.parseDouble(textDisplay.getText());
+
+                if (Objects.equals(op, "+"))
+                {
+                    result = a + b;
+                    textDisplay.setText(String.valueOf(result));
+                } else if (Objects.equals(op, "-"))
+                {
+                    result = a - b;
+                    textDisplay.setText(String.valueOf(result));
+                }else if (Objects.equals(op, "*"))
+                {
+                    result = a * b;
+                    textDisplay.setText(String.valueOf(result));
+                }else if (Objects.equals(op, "/"))
+                {
+                    result = a / b;
+                    textDisplay.setText(String.valueOf(result));
+                }
             }
         });
     }
